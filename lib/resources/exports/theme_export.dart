@@ -1,0 +1,1 @@
+export '../../resources/themes/text_theme.dart';

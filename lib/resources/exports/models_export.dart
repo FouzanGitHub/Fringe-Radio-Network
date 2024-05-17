@@ -1,0 +1,1 @@
+export '../../../view_model/model/dashboard/drawer_model.dart';
