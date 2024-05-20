@@ -5,7 +5,7 @@ class DashboardController extends GetxController {
   final RxInt selectedIndex = 0.obs;
     late List<DrawerModel> drawerItems;
   final List<Widget> screens = [
-  const HomeScreen(),
+   HomeScreen(),
   const AboutScreen(),
   const StoreScreen(),
   const ChatLiveScreen()

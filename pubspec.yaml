@@ -38,7 +38,9 @@ dependencies:
   get: ^4.6.6
   responsive_framework: ^0.2.0
   shimmer: ^3.0.0
-  audioplayers: ^5.2.1
+  just_audio: ^0.9.38
+  infinite_scroll_pagination: ^4.0.0
+  number_paginator: ^0.4.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +68,7 @@ flutter:
   assets:
     - assets/font/
     - assets/images/
+    - assets/audio/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

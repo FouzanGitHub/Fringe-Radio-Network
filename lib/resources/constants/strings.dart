@@ -15,6 +15,14 @@ class Strings {
   static const String goStrange                = 'Go To The Strange!';
   static const String privacyPolicies          = 'Privacy Policies';
   static const String contactUs                = 'Contact Us';
-  
+//Home
+  static const String epPageFor                = 'Episode Page For:';
+  static const String directLink               = 'Direct Link to Audio/mp3 File:';
+  static const String epNotes                  = 'Episode Notes:';
+  static const String coveredEp                = 'Covered in this episode:';
+  static const String showList                 = 'Show List';
+//Buttons
+  static const String visitNow                 =  'Visit Now';
+  static const String download                 =  'Download';
   
 }

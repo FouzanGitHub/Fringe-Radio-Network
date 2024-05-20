@@ -17,7 +17,7 @@ class Pages  {
     ),  
      GetPage(
     name:  Routes.home, 
-    page:() => const HomeScreen(),
+    page:() =>  HomeScreen(),
     binding: HomeBindings()
     ),
      GetPage(
