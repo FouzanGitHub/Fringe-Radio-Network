@@ -1,105 +1,134 @@
 import 'package:just_audio/just_audio.dart';
 
 import '../../../resources/exports/index.dart';
+class AudioItem {
+  final String title;
+  final String description;
+  final String audioUrl;
 
+  AudioItem({required this.title, required this.description, required this.audioUrl});
+}
 class HomeController extends GetxController{
-// final AudioPlayer audioPlayer = AudioPlayer();
-final List<String> audioUrls = [
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3'
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3'
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3'
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3',
-'https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3'
 
-
-];
-final List<AudioPlayer> audioPlayer = [];
-final List<bool> _isPlayingList = [];
+ final List<AudioItem> audioItems = [
+    AudioItem(
+      title: "Title 1",
+      description: "Description 1",
+      audioUrl: "https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3",
+    ),
+     AudioItem(
+      title: "Title 2",
+      description: "Description 2",
+      audioUrl: "https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3",
+    ),
+    // Add more audio items here
+  ];
+  late List<AudioPlayer> audioPlayer;
+  late List<bool> _isPlayingList;
 
   int currentPage = 0;
-  int itemsPerPage = 5;
- void setCurrentPage(int page) {
-    currentPage = page;
-    print('Current Page: $currentPage');
-    update(['Audio']); // Update UI when currentPage changes
-  }
+  int itemsPerPage = 2;
+
   
+
   @override
   void onInit() {
     super.onInit();
-    // audioPlayer.setAsset('assets/audio/audio1.mp3');
-    // audioPlayer.setUrl('https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3');
-    for (String url in audioUrls) {
+   audioPlayer = [];
+    _isPlayingList = [];
+    
+    for (AudioItem audioItem in audioItems) {
       AudioPlayer player = AudioPlayer();
-      player.setUrl(url);
+      player.setUrl(audioItem.audioUrl);
       audioPlayer.add(player);
       _isPlayingList.add(false);
-  
-      
     }
   }
-List<String> getCurrentPageAudioUrls() {
+
+List<AudioItem> getCurrentPageAudioItems() {
   int startIndex = currentPage * itemsPerPage;
   int endIndex = startIndex + itemsPerPage;
-  endIndex = endIndex < audioUrls.length ? endIndex : audioUrls.length;
-  List<String> currentPageUrls = audioUrls.sublist(startIndex, endIndex);
-  print('Current Page URLs: $currentPageUrls'); // Add this line for debugging
-  
-  return currentPageUrls;
-  
+  endIndex = endIndex < audioItems.length ? endIndex : audioItems.length;
+  List<AudioItem> currentPageItems = audioItems.sublist(startIndex, endIndex);
+  return currentPageItems;
 }
 
 
-    bool isPlaying(int index) {
-    return _isPlayingList[index];
+  
+    void setCurrentPage(int page) {
+    currentPage = page;
+    stopAudioPlayback();
+    for (int i = 0; i < itemsPerPage; i++) {
+      int pageIndex = currentPage * itemsPerPage + i;
+      if (pageIndex < audioPlayer.length) {
+        audioPlayer[pageIndex].setUrl(audioItems[pageIndex].audioUrl);
+        if (_isPlayingList[pageIndex]) {
+          play(pageIndex);
+        }
+      }
+    }
+    update(['Audio']);
+  }
+
+  void stopAudioPlayback() {
+    for (int i = 0; i < audioPlayer.length; i++) {
+      if (isPlaying(i)) {
+        pause(i);
+      }
+    }
+  }
+
+  bool isPlaying(int index) {
+    final pageIndex = currentPage * itemsPerPage + index;
+    if (pageIndex < audioPlayer.length) {
+      return _isPlayingList[pageIndex];
+    }
+    return false;
   }
 
   void play(int index) {
-    audioPlayer[index].play();
-    _isPlayingList[index] = true;
+    final pageIndex = currentPage * itemsPerPage + index;
+    if (pageIndex < audioPlayer.length) {
+      audioPlayer[pageIndex].play();
+      _isPlayingList[pageIndex] = true;
+      
+    }
     update(['Audio']);
   }
 
   void pause(int index) {
-    audioPlayer[index].pause();
-    _isPlayingList[index] = false;
+    final pageIndex = currentPage * itemsPerPage + index;
+    if (pageIndex < audioPlayer.length) {
+      audioPlayer[pageIndex].pause();
+      _isPlayingList[pageIndex] = false;
+      
+    }
     update(['Audio']);
   }
 
-  Future<void> seek(int index,Duration position) async {
-    await audioPlayer[index].seek(position);
-    update(['Audio']);
+  Future<void> seek(int index, Duration position) async {
+    final pageIndex = currentPage * itemsPerPage + index;
+    if (pageIndex < audioPlayer.length) {
+      await audioPlayer[pageIndex].seek(position);
+      update(['Audio']);
+    }
   }
 
-  Stream<Duration?>  positionStream(int index) => audioPlayer[index].positionStream;
-  Stream<Duration?>  durationStream(int index) => audioPlayer[index].durationStream;
+  Stream<Duration?> positionStream(int index) {
+    final pageIndex = currentPage * itemsPerPage + index;
+    if (pageIndex < audioPlayer.length) {
+      return audioPlayer[pageIndex].positionStream;
+    }
+    return Stream.empty();
+  }
+
+  Stream<Duration?> durationStream(int index) {
+    final pageIndex = currentPage * itemsPerPage + index;
+    if (pageIndex < audioPlayer.length) {
+      return audioPlayer[pageIndex].durationStream;
+    }
+    return Stream.empty();
+  }
 
   @override
   void onClose() {

@@ -13,3 +13,4 @@ export '../exports/services_export.dart';
 export '../exports/theme_export.dart';
 export '../exports/utils_export.dart';
 export '../exports/view_export.dart';
+export '../exports/component_export.dart';

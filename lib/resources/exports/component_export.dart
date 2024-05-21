@@ -1,0 +1,1 @@
+export '../../view/home/components/number_pagination.dart';
