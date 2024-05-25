@@ -25,6 +25,18 @@ class CustomTextTheme{
       fontWeight: FontWeight.bold,
       color: AppColors.textWhite,
     );
+    static const bold24 = TextStyle(
+      fontSize: 24,
+      fontFamily: 'Roboto',
+      fontWeight: FontWeight.bold,
+      color: AppColors.textWhite,
+    );
+    static const bold22 = TextStyle(
+      fontSize: 22,
+      fontFamily: 'Roboto',
+      fontWeight: FontWeight.bold,
+      color: AppColors.textWhite,
+    );
     static const bold20 = TextStyle(
       fontSize: 20,
       fontFamily: 'Roboto',

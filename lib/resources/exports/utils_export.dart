@@ -12,6 +12,8 @@ export '../../../resources/utils/custom_number_paginator.dart';
 export '../../resources/utils/custom_shimmer_container.dart';
 export '../../resources/utils/custom_audiotitle_shimmer.dart';
 export '../../resources/utils/custom_audioplayer_shimmer.dart';
+export '../../resources/utils/custom_about_us_image_box.dart';
+
 
 
 

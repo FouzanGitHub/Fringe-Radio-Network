@@ -1,22 +1,19 @@
 import 'package:fringe_radio_network/dummy/home_about_us.dart';
-import '../../resources/exports/index.dart';
 
+import '../../../resources/exports/index.dart';
 
-class AboutScreen extends GetView<AboutScreen> {
-  const AboutScreen({super.key});
-
+class HomeAboutUsReadMore extends StatelessWidget {
+   const HomeAboutUsReadMore({super.key});
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    
+      appBar:const AppBarWidget(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             const SpaceH20(),
-            const AboutUsImageBox(
-            isHomeAboutUs: false,
-            ),
-     
+            const AboutUsImageBox(isHomeAboutUs: true),
             const SpaceH20(),
             ListView.builder(
               shrinkWrap: true,

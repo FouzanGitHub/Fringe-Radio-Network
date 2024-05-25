@@ -1,3 +1,4 @@
+import '../../../dummy/home_audio_lists.dart';
 import '../../../resources/exports/index.dart';
 
 
@@ -12,7 +13,7 @@ class NumberPaginatorHome extends StatelessWidget {
         id: 'Audio',
         builder: (context) {
           final totalPages =
-              (controller.audioItems.length / controller.itemsPerPage).ceil();
+              (audioItems.length / controller.itemsPerPage).ceil();
 
           return CustomNumberPaginatorWidget(
             initialPage: 0,

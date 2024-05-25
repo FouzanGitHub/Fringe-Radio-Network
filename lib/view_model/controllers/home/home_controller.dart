@@ -1,5 +1,7 @@
-import 'package:just_audio/just_audio.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
+import '../../../dummy/home_audio_lists.dart';
 import '../../../resources/exports/index.dart';
 class AudioItem {
   final String title;
@@ -10,24 +12,12 @@ class AudioItem {
 }
 class HomeController extends GetxController{
 
- final List<AudioItem> audioItems = [
-    AudioItem(
-      title: "Title 1",
-      description: "Description 1",
-      audioUrl: "https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/60054991/a_man_shall_be_as_an_hiding_place_from_the_wind_isaiah_32.mp3",
-    ),
-     AudioItem(
-      title: "Title 2",
-      description: "Description 2",
-      audioUrl: "https://dts.podtrac.com/redirect.mp3/mgln.ai/track/api.spreaker.com/download/episode/59992872/god_s_word_cannot_fail_isaiah_33_and_34.mp3",
-    ),
-    // Add more audio items here
-  ];
+  
   late List<AudioPlayer> audioPlayer;
   late List<bool> _isPlayingList;
 
   int currentPage = 0;
-  int itemsPerPage = 2;
+  int itemsPerPage = 4;
 
   
 
@@ -44,6 +34,33 @@ class HomeController extends GetxController{
       _isPlayingList.add(false);
     }
   }
+final Uri url = Uri.parse("https://www.spreaker.com/episode/let-the-faith-do-the-work-isaiah-50-spiritwars--60157311");
+
+  Future<void> launchUrlWeb() async {
+    if (!await launchUrl(url)) {
+      throw Exception("Could not launch $url");
+    }
+  }
+
+  //  void launchURL() async {
+  //   String url;
+  //   if (Platform.isAndroid) {
+  //     // URL to open the Play Store listing of your app
+  //     url = 'https://www.spreaker.com/episode/let-the-faith-do-the-work-isaiah-50-spiritwars--60157311';
+  //   } else if (Platform.isIOS) {
+  //     // URL to open the App Store listing of your app
+  //     url = 'https://www.spreaker.com/episode/let-the-faith-do-the-work-isaiah-50-spiritwars--60157311';
+  //   } else {
+  //     // Handle other platforms if needed
+  //     throw 'Unsupported platform';
+  //   }
+
+  //   await FlutterWebBrowser.openWebPage(
+  //     url: url,
+  //     // androidToolbarColor: Colors.deepPurple,
+  //   );
+  // }
+
 
 List<AudioItem> getCurrentPageAudioItems() {
   int startIndex = currentPage * itemsPerPage;
