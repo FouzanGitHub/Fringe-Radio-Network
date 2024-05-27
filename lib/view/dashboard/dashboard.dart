@@ -1,5 +1,6 @@
 import '../../resources/exports/index.dart';
 
+
 class Dashboard extends GetView<DashboardController> {
   const Dashboard({super.key});
 
@@ -13,8 +14,10 @@ class Dashboard extends GetView<DashboardController> {
       child: Scaffold(
         backgroundColor: AppColors.scaffoldBackground,
         // extendBody: true,
-          appBar:const  AppBarWidget(),
-        endDrawer: MyDrawer(items: controller.drawerItems),
+          appBar:const  AppBarWidget(
+          showImage: true,
+          ),
+        endDrawer: MyDrawer(),
         
         body:  Obx(() => controller.screens[controller.selectedIndex.value]),
         bottomNavigationBar: BottomNavigationBarWidget(

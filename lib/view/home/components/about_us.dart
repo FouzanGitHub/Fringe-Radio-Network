@@ -14,7 +14,7 @@ class HomeAboutUs extends StatelessWidget {
           style:
               CustomTextTheme.regular20.copyWith(color: AppColors.textPrimary),
         ),
-        const Text(Strings.fringeRadioNetwork, style: CustomTextTheme.bold24),
+        const Text(Strings.theFringeRadioNetwork, style: CustomTextTheme.bold24),
         const SpaceH20(),
         Padding(
           padding: const EdgeInsets.only(
@@ -50,9 +50,10 @@ class HomeAboutUs extends StatelessWidget {
           height: Sizes.HEIGHT_50,
           width: Sizes.WIDTH_130,
           isIcon: true,
+          isBackgroundDark: true,
           icon: Icons.north_east_rounded,
           title: Strings.readMore,
-          pressed: (){Get.to( HomeAboutUsReadMore());},
+          pressed: (){Get.to(const HomeAboutUsReadMore());},
         ),
       ],
     );

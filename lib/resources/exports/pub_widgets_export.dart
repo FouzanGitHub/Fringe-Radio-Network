@@ -18,7 +18,11 @@ export 'package:responsive_framework/responsive_framework.dart';
 
 // packages
 export 'package:shimmer/shimmer.dart';
-export 'package:just_audio/just_audio.dart';
+
 export 'package:number_paginator/number_paginator.dart';
+export 'package:url_launcher/url_launcher.dart';
+export 'package:flutter_bounce/flutter_bounce.dart';
+
+
 
 

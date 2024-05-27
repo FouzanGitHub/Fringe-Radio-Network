@@ -38,7 +38,7 @@ class AboutUsImageBox extends StatelessWidget {
                     )
                         
                   ),
-                 const  Text(Strings.fringeRadioNetwork,
+                 const  Text(Strings.theFringeRadioNetwork,
                       style: CustomTextTheme.bold24),
                 ],
               ),

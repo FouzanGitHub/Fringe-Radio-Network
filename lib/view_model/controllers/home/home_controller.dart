@@ -1,5 +1,5 @@
 
-import 'package:url_launcher/url_launcher.dart';
+import 'package:just_audio/just_audio.dart';
 
 import '../../../dummy/home_audio_lists.dart';
 import '../../../resources/exports/index.dart';

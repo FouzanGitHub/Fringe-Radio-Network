@@ -1,3 +1,5 @@
+import 'package:flutter_bounce/flutter_bounce.dart';
+
 import '../exports/index.dart';
 
 class CustomButton extends StatelessWidget {
@@ -7,6 +9,7 @@ class CustomButton extends StatelessWidget {
   final bool isIcon;
   final dynamic icon;
   final dynamic pressed;
+  final dynamic isBackgroundDark;
   const CustomButton(
       {super.key,
       this.height,
@@ -14,12 +17,15 @@ class CustomButton extends StatelessWidget {
       required this.title,
       required this.isIcon,
       this.icon,
-      this.pressed});
+     required this.pressed,
+     required  this.isBackgroundDark
+      });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: pressed,
+    return Bounce(
+      duration:const Duration(milliseconds: 100),
+      onPressed: pressed,
       child: Container(
         padding:const  EdgeInsets.only(left: Sizes.PADDING_4, right: Sizes.PADDING_4),
         height: height ?? Sizes.HEIGHT_32 ,
@@ -29,7 +35,9 @@ class CustomButton extends StatelessWidget {
             color: AppColors.primaryColor,
             boxShadow: [
               BoxShadow(
-              color: AppColors.blackColor.withOpacity(0.3),
+              color: isBackgroundDark 
+              ? AppColors.blackColor.withOpacity(0.3)
+              :   AppColors.grey.withOpacity(0.3),
               blurRadius: 3,
               spreadRadius: 3,
               offset: const Offset(0, 3)

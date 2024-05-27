@@ -1,9 +1,9 @@
 
 import '../../../resources/exports/index.dart';
 
-class StoreBindings extends Bindings {  
+class ShopBindings extends Bindings {  
   @override
   void dependencies() {
-  Get.lazyPut(() => StoreController());
+  Get.lazyPut(() => ShopController());
   }
 }

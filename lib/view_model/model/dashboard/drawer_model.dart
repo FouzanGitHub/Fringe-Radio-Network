@@ -4,7 +4,7 @@ import '../../../resources/exports/index.dart';
 class DrawerModel {
   String title;
   dynamic icon;
-  VoidCallback onTap;
+  dynamic onTap;
 
   DrawerModel({
     required this.title,

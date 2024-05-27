@@ -1,1 +1,11 @@
 export '../../view/home/components/number_pagination.dart';
+export '../../view/chatlive/components/top_image_box.dart';
+export '../../view/dashboard/components/bottom_bar.dart';
+export '../../view/ironShow/components/audio_detail_list.dart';
+export '../../view/ironShow/components/number_paginator.dart';
+export '../../view/ironShow/components/number_paginator_iron_detail.dart';
+export '../../view/ironShow/components/top_audio_list.dart';
+export '../../view/ironShow/components/top_single_audio.dart';
+export '../../view/spiritwar/components/audio_detail_list.dart';
+export '../../view/spiritwar/components/number_paginator.dart';
+export '../../view/spiritwar/components/top_audio.dart';

@@ -7,8 +7,12 @@ class HomeAboutUsReadMore extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
+  
     return Scaffold(
-      appBar:const AppBarWidget(),
+      appBar:const AppBarWidget(
+      showImage: false,
+      ),
+      endDrawer: MyDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -1,5 +1,5 @@
-import '../exports/index.dart';
 
+import '../exports/index.dart';
 
 class Pages  {
     static List<GetPage> getPages(){
@@ -27,14 +27,48 @@ class Pages  {
     ),
      GetPage(
     name:  Routes.store, 
-    page:() => const StoreScreen(),
-    binding: StoreBindings()
+    page:() => const ShopScreen(),
+    binding: ShopBindings()
     ),
      GetPage(
     name:  Routes.liveChat, 
     page:() => const ChatLiveScreen(),
     binding: ChatLiveBindings()
-    ),  
+    ), 
+    GetPage(
+    name:  Routes.chatting, 
+    page:() =>  ChattingScreen(),
+    binding: ChatLiveBindings()
+    ),
+
+   GetPage(
+    name:  Routes.donate, 
+    page:() =>   const DonateScreen(),
+    binding: DonateBinding()
+    ),
+
+     GetPage(
+    name:  Routes.ironShow, 
+    page:() =>   IronShowScreen(),
+    binding: IronShowBinding()
+    ),
+     GetPage(
+    name:  Routes.spiritWar, 
+    page:() =>   SpiritWarScreen(),
+    binding: SpiritWarBinding()
+    ),
+
+
+     GetPage(
+    name:  Routes.beOnLogo, 
+    page:() =>   BeOnLogoScreen(),
+    binding: SpiritWarBinding()
+    ),
+    GetPage(
+    name:  Routes.contactUs, 
+    page:() =>  ContactUsScreen(),
+    binding: ContactUsBinding()
+    ),
     ];
     }
 }

@@ -103,6 +103,7 @@ Widget textButton(
         CustomButton(
           title: buttonTitle,
           isIcon: true,
+          isBackgroundDark: true,
           icon: icon,
           pressed: pressed,
         ),
