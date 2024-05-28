@@ -10,6 +10,11 @@ class DashboardController extends GetxController {
  
      List<DrawerModel> drawerItems = [
        DrawerModel(
+        title: Strings.home,
+        icon: Icons.home_outlined,
+        onTap: () {},
+      ),
+       DrawerModel(
         title: Strings.donate,
         icon: Icons.volunteer_activism_outlined,
         onTap: () {Get.toNamed(Routes.donate);},

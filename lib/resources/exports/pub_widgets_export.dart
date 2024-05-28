@@ -22,6 +22,9 @@ export 'package:shimmer/shimmer.dart';
 export 'package:number_paginator/number_paginator.dart';
 export 'package:url_launcher/url_launcher.dart';
 export 'package:flutter_bounce/flutter_bounce.dart';
+export 'package:lottie/lottie.dart';
+export 'package:flutter_file_downloader/flutter_file_downloader.dart';
+
 
 
 

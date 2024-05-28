@@ -62,7 +62,7 @@ class Pages  {
      GetPage(
     name:  Routes.beOnLogo, 
     page:() =>   BeOnLogoScreen(),
-    binding: SpiritWarBinding()
+    binding: BeOnLogoBinding()
     ),
     GetPage(
     name:  Routes.contactUs, 

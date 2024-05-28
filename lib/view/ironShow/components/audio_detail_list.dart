@@ -49,13 +49,26 @@ class AudioDetailIron extends StatelessWidget {
                         print('abc');
                         await ironDetailController.launchUrlWeb();
                       },
-                      downloadPressed: () {},
+                      downloadPressed: () {
+                          FileDownloader.downloadFile(
+                          url:audioDetailItem.audioUrl,
+                          name: "Audio", 
+
+                    onDownloadCompleted: (String path) {
+                      // print('FILE DOWNLOADED TO PATH: $path');
+                     const CustomSnackBar(
+                     title: Strings.downloadComplete,
+                     message: Strings.fileDownload,
+                     ).showSnackBar();
+                    },
+                    onDownloadError: (String error) {
+                      // print('DOWNLOAD ERROR: $error');
+                    }
+                    );
+                      },
                       reversePressed: () async {
-                        await ironDetailController.seek(
-                          index,
-                          ironDetailController.audioPlayer[index].position -
-                              const Duration(seconds: 10),
-                        );
+                        final newPosition = ironDetailController.audioPlayer[index + 1].position - const Duration(seconds: 10);
+                    await ironDetailController.seek(index + 1, newPosition < Duration.zero ? Duration.zero : newPosition);
                       },
                       forwardPressed: () async {
                         await ironDetailController.seek(

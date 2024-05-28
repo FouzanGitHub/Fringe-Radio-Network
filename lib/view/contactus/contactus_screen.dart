@@ -1,5 +1,6 @@
 import '../../resources/exports/index.dart';
 
+
 class ContactUsScreen extends GetView<ContactUsController> {
   const ContactUsScreen({super.key});
 
@@ -62,14 +63,23 @@ class ContactUsScreen extends GetView<ContactUsController> {
           ),
           const SpaceH30(),
           CustomButton(
-              height: Sizes.HEIGHT_45,
-              width: Sizes.WIDTH_160,
-              title: Strings.submit,
-              isIcon: false,
-              pressed: (){},
-              isBackgroundDark: true,
-              ),
-        const SpaceH30(),
+            height: Sizes.HEIGHT_45,
+            width: Sizes.WIDTH_160,
+            title: Strings.submit,
+            isIcon: false,
+            pressed: () {
+              Get.dialog(
+              const AlertDialog(
+                backgroundColor: AppColors.transparent,
+                elevation: 0,
+                insetPadding:  EdgeInsets.all(Sizes.PADDING_4),
+                content: CustomMessageDialog()
+              )
+              );
+            },
+            isBackgroundDark: true,
+          ),
+          const SpaceH30(),
         ]),
       ),
     );

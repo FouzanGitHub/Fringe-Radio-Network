@@ -8,6 +8,7 @@ final  IronShowAudioDetailController ironDetailController = Get.put(IronShowAudi
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:const AppBarWidget(showImage: true),
+      endDrawer: MyDrawer(),
       body:SingleChildScrollView(
         child: Column(
         children: [

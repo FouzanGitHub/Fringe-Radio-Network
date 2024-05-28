@@ -13,8 +13,9 @@ class Dashboard extends GetView<DashboardController> {
       top: false,
       child: Scaffold(
         backgroundColor: AppColors.scaffoldBackground,
-        // extendBody: true,
+        
           appBar:const  AppBarWidget(
+        
           showImage: true,
           ),
         endDrawer: MyDrawer(),

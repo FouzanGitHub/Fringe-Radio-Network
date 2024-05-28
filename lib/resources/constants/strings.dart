@@ -30,6 +30,7 @@ class Strings {
   static const String clickHere                     =  'Click Here';
   static const String enter                         =  'Enter';
   static const String submit                        =  'Submit';
+  static const String ok                            =  'Ok';
 //About
   static const String aboutUs                      =  'About Us';
   static const String theFringeRadioNetwork        =  'The Fringe Radio Network';
@@ -63,12 +64,16 @@ class Strings {
   static const String pleaseDonate                     = 'Please Donate To';
   static const String donateDetail                     = 'Being the premier FRINGE podcast network on the internet isn\'t easy or cheap! Donating to the Fringe Radio Network ensures that we can continue to expand and reach more listeners, find new shows and develop more fringe content for you!  Your donation also goes to support the individual podcasters on the network and allows us to be a more effective outreach to the larger fringe community with the Gospel.';
 //Be On Logo
-  static const String beLogoDetail1                    = 'Let us make you famous! Take a photo while wearing or holding up your FRN gear to be on our logo! to get your Fringe Radio Network gear!';
-  static const String beLogoDetail2                    = 'If You Have A Printer, You Can Just Send Us A Photo Of You Holding Up The Logo. Send Photos To: fringeradionetwork@gmail.com';    
+  static const String beLogoDetail1                       = 'Let us make you famous! Take a photo while wearing or holding up your FRN gear to be on our logo! to get your Fringe Radio Network gear!';
+  static const String beLogoDetail2                       = 'If You Have A Printer, You Can Just Send Us A Photo Of You Holding Up The Logo. Send Photos To: fringeradionetwork@gmail.com';    
+  static const String downloadComplete                    = 'Download Complete';    
+  static const String fileDownload                        = 'Your File Has Been Downloaded';    
 //Contact Us
   static const String contactUS                           = 'Contact Us';
   static const String sendMessage                         = 'Send Message To';
   static const String yourName                            = 'Your Name';
   static const String emailAddress                        = 'Email Address';
   static const String yourMesage                          = 'Your Message';
+  static const String sendMessageLine                     = 'Your Message Has Been Send Successfully';
+
 }

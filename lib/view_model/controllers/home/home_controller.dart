@@ -14,6 +14,7 @@ class HomeController extends GetxController{
 
   
   late List<AudioPlayer> audioPlayer;
+  
   late List<bool> _isPlayingList;
 
   int currentPage = 0;
@@ -41,25 +42,6 @@ final Uri url = Uri.parse("https://www.spreaker.com/episode/let-the-faith-do-the
       throw Exception("Could not launch $url");
     }
   }
-
-  //  void launchURL() async {
-  //   String url;
-  //   if (Platform.isAndroid) {
-  //     // URL to open the Play Store listing of your app
-  //     url = 'https://www.spreaker.com/episode/let-the-faith-do-the-work-isaiah-50-spiritwars--60157311';
-  //   } else if (Platform.isIOS) {
-  //     // URL to open the App Store listing of your app
-  //     url = 'https://www.spreaker.com/episode/let-the-faith-do-the-work-isaiah-50-spiritwars--60157311';
-  //   } else {
-  //     // Handle other platforms if needed
-  //     throw 'Unsupported platform';
-  //   }
-
-  //   await FlutterWebBrowser.openWebPage(
-  //     url: url,
-  //     // androidToolbarColor: Colors.deepPurple,
-  //   );
-  // }
 
 
 List<AudioItem> getCurrentPageAudioItems() {
@@ -91,7 +73,9 @@ List<AudioItem> getCurrentPageAudioItems() {
     for (int i = 0; i < audioPlayer.length; i++) {
       if (isPlaying(i)) {
         pause(i);
+       
       }
+     update(['Audio']); 
     }
   }
 
@@ -100,7 +84,10 @@ List<AudioItem> getCurrentPageAudioItems() {
     if (pageIndex < audioPlayer.length) {
       return _isPlayingList[pageIndex];
     }
+    update(['Audio']); 
+
     return false;
+    
   }
 
   void play(int index) {
@@ -136,7 +123,7 @@ List<AudioItem> getCurrentPageAudioItems() {
     if (pageIndex < audioPlayer.length) {
       return audioPlayer[pageIndex].positionStream;
     }
-    return Stream.empty();
+    return const Stream.empty();
   }
 
   Stream<Duration?> durationStream(int index) {
@@ -144,7 +131,7 @@ List<AudioItem> getCurrentPageAudioItems() {
     if (pageIndex < audioPlayer.length) {
       return audioPlayer[pageIndex].durationStream;
     }
-    return Stream.empty();
+    return const Stream.empty();
   }
 
   @override

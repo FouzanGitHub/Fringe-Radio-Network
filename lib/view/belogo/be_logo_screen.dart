@@ -1,4 +1,7 @@
+import 'package:flutter_file_downloader/flutter_file_downloader.dart';
 import 'package:fringe_radio_network/resources/exports/index.dart';
+
+import '../../resources/utils/custom_snake_bar.dart';
 
 class BeOnLogoScreen extends GetView<BeOnLogoController> {
   const BeOnLogoScreen({super.key});
@@ -31,13 +34,15 @@ class BeOnLogoScreen extends GetView<BeOnLogoController> {
               textAlign: TextAlign.left,
             ),
           ),
-           const SpaceH30(),
+          const SpaceH30(),
           CustomButton(
               height: Sizes.HEIGHT_45,
               width: Sizes.WIDTH_130,
               title: Strings.clickHere,
               isIcon: false,
-              pressed: (){controller.launchUrlWeb();},
+              pressed: () {
+                controller.launchUrlWeb();
+              },
               isBackgroundDark: false),
           const SpaceH40(),
           Padding(
@@ -58,7 +63,23 @@ class BeOnLogoScreen extends GetView<BeOnLogoController> {
               title: Strings.download,
               isIcon: true,
               icon: Icons.file_download_outlined,
-              pressed: (){},
+              pressed: () async {
+                FileDownloader.downloadFile(
+                    url:"https://fringeradionetwork.com/logo/fringeradio_cr.jpg",
+                    name: "Fringe Radio Network Logo", 
+
+                    onDownloadCompleted: (String path) {
+                      // print('FILE DOWNLOADED TO PATH: $path');
+                     const CustomSnackBar(
+                     title: Strings.downloadComplete,
+                     message: Strings.fileDownload,
+                     ).showSnackBar();
+                    },
+                    onDownloadError: (String error) {
+                      // print('DOWNLOAD ERROR: $error');
+                    }
+                    );
+              },
               isBackgroundDark: false),
         ],
       ),

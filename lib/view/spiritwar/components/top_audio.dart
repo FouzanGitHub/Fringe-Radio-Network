@@ -21,10 +21,8 @@ class TopAudioSpirt extends StatelessWidget {
           builder: (context) {
             return AudioPlayerWidget(
               reversePressed: () async {
-                await controller.seek(
-                  0,
-                  controller.audioPlayer[0].position - const Duration(seconds: 10),
-                );
+                final newPosition = controller.audioPlayer[0].position - const Duration(seconds: 10);
+                    await controller.seek(0, newPosition < Duration.zero ? Duration.zero : newPosition);
               },
               playPressed: () {
                 if (controller.isPlaying(0)) {

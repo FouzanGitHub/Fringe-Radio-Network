@@ -10,3 +10,4 @@ export '../../view_model/bindings/ironshow/ironshow_binding.dart';
 export '../../view_model/bindings/donate/donate_binding.dart';
 export '../../view_model/bindings/spiritwar/spiritwar_binding.dart';
 export '../../view_model/bindings/contactus/contactus_binding.dart';
+export '../../view_model/bindings/beonlogo/be_logo_binding.dart';

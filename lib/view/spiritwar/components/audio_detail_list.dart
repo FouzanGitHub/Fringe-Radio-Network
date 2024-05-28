@@ -23,13 +23,26 @@ final SpiritWarController controller = Get.put(SpiritWarController());
                     print('abc');
                     await controller.launchUrlWeb();
                   },
-                  downloadPressed: () {},
-                  reversePressed: () async {
-                    await controller.seek(
-                      index + 1,
-                      controller.audioPlayer[index + 1].position -
-                          const Duration(seconds: 10),
+                  downloadPressed: () {
+                     FileDownloader.downloadFile(
+                          url:audioItem.audioUrl,
+                          name: "Audio", 
+
+                    onDownloadCompleted: (String path) {
+                      // print('FILE DOWNLOADED TO PATH: $path');
+                     const CustomSnackBar(
+                     title: Strings.downloadComplete,
+                     message: Strings.fileDownload,
+                     ).showSnackBar();
+                    },
+                    onDownloadError: (String error) {
+                      // print('DOWNLOAD ERROR: $error');
+                    }
                     );
+                  },
+                  reversePressed: () async {
+                    final newPosition = controller.audioPlayer[index + 1].position - const Duration(seconds: 10);
+                    await controller.seek(index + 1, newPosition < Duration.zero ? Duration.zero : newPosition);
                   },
                   forwardPressed: () async {
                     await controller.seek(
